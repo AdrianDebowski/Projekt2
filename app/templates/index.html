@@ -1,0 +1,10 @@
+{% extends "baza.html" %}
+{% block content %}
+<div class="startertemplate">
+ <p class="lead">Strona główna.</p>
+{% if current_user.is_authenticated %}
+ Witaj {{ current_user.name }}!
+{% endif %}
+ </div>
+
+{% endblock %}

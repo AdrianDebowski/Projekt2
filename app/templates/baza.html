@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="portfolioApp" lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<script src="js/forms.js"></script>
+    <title>Dębowski Projekt PwJS z Pythona: Pies domowy</title>
+  </head>
+<body>
+ <nav class="site-header sticky-top py-1">
+ <div class="container d-flex flex-column flex-md-row justify-content-between">
+ <a class="py-2 d-none d-md-inline-block" href="/"><i class="fas fa-home"></i> Strona główna</a>
+ <a class="py-2 d-none d-md-inline-block" href="/info"><i class="fas fa-paw"></i> Info</a>
+ <a class="py-2 d-none d-md-inline-block" href="/about"> <i class="fas fa-user-secret"></i> Twórca strony</a>
+
+{% if current_user.is_authenticated %}
+ <a class="py-2 d-none d-md-inline-block" href="/logout"><i class="fas fa-sign-out-alt"></i> Wyloguj się</a>
+{% endif %}
+ </div>
+ </nav>
+ <main role="main" class="container">
+ <div class="starter-template">
+{% if tytul %}
+<h1>{{tytul}}</h1>
+{% else %}
+<h1>Strona główna<h1>
+{% endif %}
+{% block content %}{% endblock %}
+ </div>
+
+    </main><!-- /.container -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
